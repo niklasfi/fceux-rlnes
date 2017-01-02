@@ -1,0 +1,8 @@
+import glob
+
+source_list = glob.glob('*.cpp')+glob.glob('*.c')
+
+for x in range(len(source_list)):
+  source_list[x] = 'learn/' + source_list[x]
+
+Return('source_list')

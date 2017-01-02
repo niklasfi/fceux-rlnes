@@ -8,6 +8,7 @@ drivers/common
 fir
 input
 utils
+learn
 """)
 #palettes
 
