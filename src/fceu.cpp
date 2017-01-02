@@ -88,6 +88,10 @@ extern void RefreshThrottleFPS();
 #include <cstdarg>
 #include <ctime>
 
+#include "learn/learn.h"
+extern uint8 joy[4];
+extern uint32 cur_input_display;
+
 using namespace std;
 
 //-----------
@@ -713,6 +717,8 @@ void FCEUI_Emulate(uint8 **pXBuf, int32 **SoundBuf, int32 *SoundBufSize, int ski
 #endif
 
 	FCEU_UpdateInput();
+  rl::process(RAM, joy[0]);
+  memcpy(&cur_input_display, joy, 4);
 	lagFlag = 1;
 
 #ifdef _S9XLUA_H
