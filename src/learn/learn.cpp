@@ -1,4 +1,4 @@
-﻿#include "learn.h"
+#include "learn.h"
 
 #include "flappy.h"
 

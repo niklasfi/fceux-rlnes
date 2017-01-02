@@ -1005,7 +1005,7 @@ void FCEUI_SetRegion(int region, int notify) {
 			normalscanlines = 240;
 			pal_emulation = 1;
 			dendy = 0;
-#ifdef WIN32			
+#ifdef WIN32
 			if (notify)
 			{
 				FCEU_DispMessage("PAL mode set", 0);
@@ -1017,7 +1017,7 @@ void FCEUI_SetRegion(int region, int notify) {
 			normalscanlines = 290;
 			pal_emulation = 0;
 			dendy = 1;
-#ifdef WIN32			
+#ifdef WIN32
 			if (notify)
 			{
 				FCEU_DispMessage("Dendy mode set", 0);

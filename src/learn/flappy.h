@@ -49,7 +49,7 @@ namespace rl{
 			assert(x_scroll < BOARD_X_SIZE);
 			assert(0 <= y_scroll);
 			assert(y_scroll < BOARD_Y_SIZE);
-			
+
 			x_abs = (x_scroll + BIRD_BEFORE_SCROLL_OFFSET) % BOARD_X_SIZE;
 			assert(0 <= x_scroll);
 			assert(x_abs < BOARD_X_SIZE);
@@ -414,7 +414,7 @@ namespace rl{
 		RLBot(const Q& Knowledge, const double alphaInit = 0.3, const double gammaInit = 0.7, const double epsilon = 0.0) : Knowledge(Knowledge), alpha(alphaInit), gamma(gammaInit){}
 		typename Q::ActionT react(const typename Q::StateT& state, const typename std::vector<typename Q::ActionT>& possibleActions){
 			//TODO: implement epsilon greedy exploration policy
-			// something like: 
+			// something like:
 			// if(rand<epsilon)
 			//	  chose randomly the action
 			// else
@@ -442,7 +442,7 @@ namespace rl{
 		double alpha;
 		double gamma;
 	};
-	
+
 	template<typename Bot>
 	class FlappyGame{
 	public:
@@ -450,7 +450,7 @@ namespace rl{
 		FlappyGame(const Bot& bot) : bot(bot){}
 		uint8 play(uint8* RAM){
 			currentState = FlappyState(RAM);
-			
+
 			/*
 			static uint8 score_old = 0;
 			uint8 score_cur = currentState.score;
@@ -482,7 +482,7 @@ namespace rl{
 			if (oldState.accepts_input){
 				int rem = currentState.score % 2048;
 				std::vector<int> test{ 0, 683, 1365, 1366 };
-				
+
 				if(currentState.score == 0 || std::none_of(test.begin(), test.end(), [rem](int i){return i==rem ; }))
 					bot.update(oldState, last_response, currentState, reward, viableActions(currentState));
 				if (!currentState.alive)
